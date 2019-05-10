@@ -5,7 +5,7 @@ import Yup from "yup";
 
 import "./styles.css";
 
-const App = ({ values }) => {
+const App = ({ values, handleChange }) => {
   return (
     <div className="App">
       <h1>Hello CodeSandbox</h1>
@@ -15,18 +15,19 @@ const App = ({ values }) => {
         name="email"
         placeholder="Email"
         value={values.email}
+        onChange={handleChange}
       />
     </div>
   );
 };
 
 const FormikApp = withFormik({
-  mapPropsToValues() {
+  mapPropsToValues({ email }) {
     return {
-      email: "test text"
+      email: email || ""
     };
   }
 })(App);
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<FormikApp />, rootElement);
+ReactDOM.render(<FormikApp email="rkuerbis@gmail.com" />, rootElement);
