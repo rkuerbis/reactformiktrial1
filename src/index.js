@@ -11,7 +11,7 @@ const App = ({ values, handleChange, handleSubmit }) => {
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
 
-      <form onSubmit={handleSubmit}>
+      <Form>
         <input
           type="email"
           name="email"
@@ -28,7 +28,7 @@ const App = ({ values, handleChange, handleSubmit }) => {
           onChange={handleChange}
         />
         <button type="submit">Submit</button>
-      </form>
+      </Form>
     </div>
   );
 };
