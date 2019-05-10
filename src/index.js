@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { withFormik, Form } from "formik";
+import { withFormik, Form, Field } from "formik";
 import Yup from "yup";
 
 import "./styles.css";
@@ -12,21 +12,9 @@ const App = ({ values, handleChange, handleSubmit }) => {
       <h2>Start editing to see some magic happen!</h2>
 
       <Form>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={values.email}
-          onChange={handleChange}
-        />
+        <Field type="email" name="email" placeholder="Email" />
 
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={values.password}
-          onChange={handleChange}
-        />
+        <Field type="password" name="password" placeholder="Password" />
         <button type="submit">Submit</button>
       </Form>
     </div>
